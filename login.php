@@ -1,34 +1,32 @@
 <?php
-include 'config/connect.php';
-session_start();
+// include 'config/connect.php';
+// session_start();
 
-$login_message = "";
+// if (isset($_SESSION["is_login"])) {
+//     header("location: dashboard.php");
+// }
 
-if (isset($_SESSION["is_login"])) {
-    header("location: dashboard.php");
-}
+// if (isset($_POST['login'])) {
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
 
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+//     $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
 
-    $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+//     $result = $connect->query($sql);
 
-    $result = $connect->query($sql);
+//     if ($result->num_rows > 0) {
+//         $data = $result->fetch_assoc();
+//         $_SESSION["username"] = $data["username"];
+//         $_SESSION["is_login"] = true;
 
-    if ($result->num_rows > 0) {
-        $data = $result->fetch_assoc();
-        $_SESSION["username"] = $data["username"];
-        $_SESSION["is_login"] = true;
+//         header("location:dashboard.php");
 
-        header("location:dashboard.php");
-
-    } else {
-        echo "<script>
-        alert('Username atau password salah');
-        </script>";
-    }
-}
+//     } else {
+//         echo "<script>
+//         alert('Username atau password salah');
+//         </script>";
+//     }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +38,7 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login</title>
+    <title>Login | Web program Nilai</title>
     <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="vendor/fontawesome-pro-6.5.1/css/all.css">
     <script src="vendor/fontawesome-pro-6.5.1/js/all.js" type="text/javascript"></script>
